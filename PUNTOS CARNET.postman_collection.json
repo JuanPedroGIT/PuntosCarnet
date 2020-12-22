@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "dfc89812-4ff5-468d-8ea4-f22b95bb38d9",
+		"name": "PUNTOS CARNET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InsertVehiculos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Matricula\": \"0001CCC\",\r\n    \"Marca\": \"FORD\",\r\n    \"Modelo\": \"Fiesta\",\r\n    \"Dni\" : \"0123456780B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Vehiculos",
+					"host": [
+						"{{urlPuntos}}Vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertConductor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Puntos\": 15,\r\n    \"Apellidos\": \"FORD\",\r\n    \"Nombre\": \"Fiesta\",\r\n    \"Dni\" : \"0123456780B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Conductores",
+					"host": [
+						"{{urlPuntos}}Conductores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InsertInfraccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\": \"Infraccion 1\",\r\n    \"Descripcion\": \"Descripcipn de infraccion1\",\r\n    \"puntosAdescontar\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Infracciones",
+					"host": [
+						"{{urlPuntos}}Infracciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de infracciones",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Dni\": \"0123456789A\",\r\n    \"Matricula\": \"0001BBB\",\r\n    \"NombreInfraccion\" : \"Infraccion 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}RegistroInfracciones",
+					"host": [
+						"{{urlPuntos}}RegistroInfracciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historial infracciones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\": \"Infraccion 1\",\r\n    \"Descripcion\": \"Descripcipn de infraccion1\",\r\n    \"puntosAdescontar\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Infracciones",
+					"host": [
+						"{{urlPuntos}}Infracciones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Infracciones habituales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\": \"Infraccion 1\",\r\n    \"Descripcion\": \"Descripcipn de infraccion1\",\r\n    \"puntosAdescontar\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Infracciones/0123456789A",
+					"host": [
+						"{{urlPuntos}}Infracciones"
+					],
+					"path": [
+						"0123456789A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Top Conductores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\": \"Infraccion 1\",\r\n    \"Descripcion\": \"Descripcipn de infraccion1\",\r\n    \"puntosAdescontar\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlPuntos}}Conductores/2",
+					"host": [
+						"{{urlPuntos}}Conductores"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlPuntos",
+			"value": "http://localhost:5000/api/"
+		}
+	]
+}
